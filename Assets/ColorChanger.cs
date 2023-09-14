@@ -20,8 +20,12 @@ public class ColorChanger : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
+            
         var renderer = this.GetComponent<Renderer>();
         renderer.material = collision.collider.GetComponent<Renderer>().material;
-        
+
+        // Rotate the object by a specified angle (e.g., 90 degrees) around the up axis (Y-axis)
+        float rotationAngle = 90.0f; // Change this angle as needed
+        transform.Rotate(Vector3.up, rotationAngle);
     }
 }
